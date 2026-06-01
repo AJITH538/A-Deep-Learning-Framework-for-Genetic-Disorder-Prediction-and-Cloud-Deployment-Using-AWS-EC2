@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+        }
+        .container {
+            background: linear-gradient(145deg, #ffe7a0, #ffccf9);
+            padding: 50px;
+            border-radius: 20px;
+            margin-top: 100px;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #ff416c;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h3 {
+            color: #1fa2ff;
+            font-weight: 700;
+            font-size: 2em;
+        }
+        a.btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        a.btn:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #ff416c;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Prediction Result</h2>
+    <p class="lead">The predicted genetic disease is:</p>
+    <h3>{{ disease }}</h3>
+    <a href="/" class="btn mt-4">Predict Again</a>
+</div>
+<div class="footer">
+    <p>Genetic Disease Predictor &copy; 2026</p>
+</div>
+</body>
+</html>

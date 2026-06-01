@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Genetic Disease Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* pastel gradient */
+            font-family: 'Roboto', sans-serif;
+            min-height: 100vh;
+        }
+        h2 {
+            color: #ff416c;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px #fff;
+        }
+        .container {
+            background: linear-gradient(145deg, #ffe7a0, #ffccf9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+            margin-top: 50px;
+        }
+        label {
+            font-weight: 500;
+            color: #333;
+        }
+        .form-control, .form-select {
+            background: #fff7fa;
+            border: 2px solid #ff416c;
+            color: #333;
+            border-radius: 10px;
+        }
+        .form-control:focus, .form-select:focus {
+            border-color: #1fa2ff;
+            box-shadow: 0 0 10px #1fa2ff;
+            background: #fff7fa;
+            color: #333;
+        }
+        button {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff4b2b, #ff416c);
+            transform: scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #ff416c;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Genetic Disease Prediction</h2>
+    <form action="/predict" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Age</label>
+                <input type="number" class="form-control" name="Age" min="10" max="70" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Gender</label>
+                <select class="form-select" name="Gender" required>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Family History</label>
+                <select class="form-select" name="Family_History" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Hemoglobin (g/dL)</label>
+                <input type="number" step="0.01" class="form-control" name="Hemoglobin" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Fetal Hemoglobin (%)</label>
+                <input type="number" step="0.01" class="form-control" name="Fetal_Hemoglobin" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>RDW_CV (%)</label>
+                <input type="number" step="0.01" class="form-control" name="RDW_CV" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Serum Ferritin (ng/mL)</label>
+                <input type="number" step="0.01" class="form-control" name="Serum_Ferritin" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>BRCA1 Expression (0–1)</label>
+                <input type="number" step="0.01" class="form-control" name="BRCA1_Expression" min="0" max="1" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>p53 Mutation</label>
+                <select class="form-select" name="p53_Mutation" required>
+                    <option value="0">Normal</option>
+                    <option value="1">Mutated</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label>Sweat Chloride (mmol/L)</label>
+                <input type="number" step="0.01" class="form-control" name="Sweat_Chloride" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>Sickled RBC (%)</label>
+                <input type="number" step="0.01" class="form-control" name="Sickled_RBC_Percent" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label>IL6 Level (pg/mL)</label>
+                <input type="number" step="0.01" class="form-control" name="IL6_Level" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-block btn-lg mt-3">Predict Disease</button>
+    </form>
+</div>
+
+<div class="footer">
+    <p>Genetic Disease Predictor &copy; 2026</p>
+</div>
+</body>
+</html>
